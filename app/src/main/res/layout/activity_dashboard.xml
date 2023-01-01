@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity">
+
+
+
+    <androidx.appcompat.widget.SearchView
+        android:drawableStart="@drawable/ic_search"
+        android:padding="4dp"
+        android:layout_marginStart="18dp"
+        android:id="@+id/searchBar"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        app:defaultQueryHint="@string/search"
+        app:layout_constraintTop_toTopOf="@id/signOutLayout"
+        app:layout_constraintBottom_toBottomOf="@id/signOutLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/search"
+        app:queryHint="@string/search"
+        />
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/signOutLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        >
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/logoutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_exit"
+            android:tint="@color/red"
+            android:background="@color/white"
+            android:clickable="true"
+            >
+        </androidx.appcompat.widget.AppCompatImageButton>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/logoutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/logoutButton"
+            app:layout_constraintEnd_toEndOf="@id/logoutButton"
+            app:layout_constraintTop_toBottomOf="@id/logoutButton"
+            android:clickable="true"
+            android:textColor="@color/red"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/journalRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        android:layout_margin="20dp"
+        tools:listitem="@layout/recycler_item"
+        android:paddingBottom="200dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/addJournalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        app:icon="@drawable/ic_new"
+        app:iconTint="@color/white"
+        android:backgroundTint="@color/primary"
+        android:elevation="10dp"
+        app:strokeWidth="0dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
